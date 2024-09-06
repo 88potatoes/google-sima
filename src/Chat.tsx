@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { MessageSquare, Send, Plus, Settings, Menu } from "lucide-react";
+import { Send, Plus, Settings, Menu } from "lucide-react";
 import { UserButton } from "@clerk/clerk-react";
 import { useAuth } from "@clerk/clerk-react";
 import { useNavigate } from "react-router-dom";
