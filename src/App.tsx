@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { ArrowRight, CheckCircle, Menu, X } from "lucide-react"
-import hero_image from "./assets/hero-image.png"
+import hero_image from "./assets/hero-image.jpg"
 
 export function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
