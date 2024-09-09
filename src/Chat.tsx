@@ -25,7 +25,7 @@ export default function Component() {
 
   useEffect(() => {
     if (isSignedIn !== undefined && !isSignedIn) {
-        console.log("hi")
+      console.log("hi");
       navigate("/");
     }
   }, [isSignedIn, navigate]);
@@ -82,7 +82,7 @@ export default function Component() {
             className="mx-2 mt-2"
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
           >
-            <Menu className="h-5 w-5 text-white"/>
+            <Menu className="h-5 w-5 text-white" />
           </Button>
           <div className="p-2 pt-4">
             <Button className="w-full justify-start mr-2" variant="default">
@@ -91,9 +91,7 @@ export default function Component() {
             </Button>
           </div>
           <ScrollArea className="h-[calc(100vh-5rem)] ease-in-out duration-300">
-            <div className="p-2 space-y-2">
-              
-            </div>
+            <div className="p-2 space-y-2"></div>
           </ScrollArea>
           <div className="absolute bottom-4 left-4">
             <Button variant="ghost" size="icon">
@@ -114,7 +112,7 @@ export default function Component() {
             <Menu className="h-5 w-5" />
           </Button>
           <Button className="mx-2 mt-4" variant="default" size="icon">
-            <Plus className="h-4 w-4"/>
+            <Plus className="h-4 w-4" />
           </Button>
           <div className="absolute bottom-4 left-4">
             <Button variant="ghost" size="icon">
@@ -128,7 +126,9 @@ export default function Component() {
       <div className="flex-1 flex flex-col">
         {/* Top nav bar */}
         <div className="w-full h-12 sticky flex items-center px-4 justify-between border-b border-gray-700">
-          <div><b>Sima-GPT</b></div>
+          <div>
+            <b>Sima-GPT</b>
+          </div>
           <UserButton />
         </div>
         <ScrollArea className="flex-1 p-4">
