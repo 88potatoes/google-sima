@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { ArrowRight, Menu, X, Send } from "lucide-react"
 import hero_image from "./assets/hero-image.jpg"
+import gt_sym from "/gt-sym.png"
 import { useState, useEffect, useRef } from 'react'
 import { Textarea } from "./components/ui/textarea"
 import { ScrollArea } from "@radix-ui/react-scroll-area"
@@ -71,19 +72,7 @@ export function App() {
       <header className="px-6 h-14 flex items-center w-full container">
         <a className="flex items-center justify-center" href="#">
           <span className="sr-only">Sima-GPT</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="h-6 w-6"
-          >
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-            <polyline points="9 22 9 12 15 12 15 22" />
-          </svg>
+          <img src={gt_sym} alt="Sima Symbol"/>
           <span className="ml-2 text-xl font-bold">Sima-GPT</span>
         </a>
         <nav className="ml-auto flex gap-6">
@@ -216,6 +205,7 @@ export function App() {
                     className="max-w-lg flex-1"
                     placeholder="Enter your email"
                     type="email"
+                    ref={emailInputRef}
                   />
                   <Button type="submit">
                     Subscribe
