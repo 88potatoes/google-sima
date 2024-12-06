@@ -4,23 +4,35 @@ import App from "./App.tsx";
 import Chat from "./Chat.tsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
-import { ClerkProvider } from "@clerk/clerk-react";
+import { PostHogProvider } from "posthog-js/react";
+import posthog from "posthog-js";
 
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+const options = {
+  api_host: import.meta.env.VITE_REACT_APP_PUBLIC_POSTHOG_HOST,
+};
+console.log(import.meta.env);
 
-if (!PUBLISHABLE_KEY) {
-  throw new Error("Missing Publishable Key");
+if (
+  !window.location.host.includes("127.0.0.1") &&
+  !window.location.host.includes("localhost")
+) {
+  posthog.init("phc_oBqsx1oYIjFa3fsjWUqIL2lNwmVRv6EDB0vutScV778", {
+    api_host: "https://us.i.posthog.com",
+    person_profiles: "always",
+  });
 }
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
+    <PostHogProvider
+      apiKey={import.meta.env.VITE_REACT_APP_PUBLIC_POSTHOG_KEY}
+      options={options}
+    >
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />} />
-          <Route path="/chat" element={<Chat />} />
         </Routes>
       </BrowserRouter>
-    </ClerkProvider>
+    </PostHogProvider>
   </StrictMode>,
 );
