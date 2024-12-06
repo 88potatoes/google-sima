@@ -9,7 +9,6 @@ import posthog from "posthog-js";
 const options = {
   api_host: import.meta.env.VITE_REACT_APP_PUBLIC_POSTHOG_HOST,
 };
-console.log(import.meta.env);
 
 if (
   !window.location.host.includes("127.0.0.1") &&
